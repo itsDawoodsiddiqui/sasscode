@@ -1,0 +1,60 @@
+$var-bg: yellow;
+$var-txt: white;
+$var-font-lg:50px;
+$var-font-sm:25x; 
+$font-size: ("mobile":16px, "tablet":30px, "dekstop":50px);
+
+@mixin flexbox  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header{
+    background-color: royalblue;
+    @include flexbox;
+
+    h2{
+        font-family: arial;
+        margin-right: 20px * 9;
+        
+    }
+    nav{
+
+        a{
+            color: $var-txt;
+            margin-right: 20px ;
+            font-size: 25px;
+            padding: 10px;
+            &:hover{
+                background-color: blue;
+            }
+        }
+    }
+    button{
+        background-color: royalblue;
+         color: $var-txt;
+         text-decoration: none;
+         padding: 2px;
+         margin: 5px;
+         font-size: $var-font-sm;
+        border: none;
+      
+    }
+}
+
+
+
+h1{
+    color: black;
+    font-size: map-get($map: $font-size, $key: tablet);
+}
+
+
+@media (max-width:900px) {
+    h1{
+        font-size: $var-font-sm;
+    }
+}
+
